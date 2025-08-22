@@ -11,11 +11,15 @@ let package = Package(
             name: "IsacStorage",
             targets: ["IsacStorage"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/IsacShin/IsacFoundation.git", from: "0.0.1")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "IsacStorage"),
+            name: "IsacStorage"
+            ,dependencies: ["IsacFoundation"]),
 
     ]
 )
